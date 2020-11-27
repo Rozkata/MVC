@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>Show</h2>
+
+<h2>
+    Guestbook Entry
+</h2>
+<dl>
+    <dt>Name:</dt>
+    <dd>@Model.Name</dd>
+    <dt>Date Added:</dt>
+    <dd>@Model.DateAdded</dd>
+    <dt>Message:</dt>
+    <dd>@Model.Message</dd>
+</dl>
+
+<p>
+    @if (ViewBag.HasPermission)
+    {
+        @Html.ActionLink("Edit", "Edit", new {id = Model.Id})
+        
+        @Html.ActionLink("Delete", "Delete", new { id = Model.Id } )
+    }
+    @Html.ActionLink("Back to Entries", "Index")
+</p>
+
+
+
